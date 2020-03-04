@@ -11,7 +11,7 @@ function App() {
 
   const search = (text) => {
     setText(text)
-    axios.get(`https://api.themoviedb.org/3/search/person?api_key=a405299a0939a3be4b4586ea1f4363e3&language=en-US&query=${text}&page=1&include_adult=false`)
+    axios.get(`https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${text}&page=1&include_adult=false`)
       .then(function (response) {
         setResults(response.data.results.filter(actor => actor.known_for_department === 'Acting'))
       })
