@@ -1,20 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
+
+import Actor from "./actor";
+import MovieList from "./movieList";
 
 const Wrapper = styled.div`
-    max-width:100px;
-    width: 100%;
-    
-    margin: 0 auto;
-    
-    border: 1px solid rgb(0, 0, 0);
-`
+  display: flex;
+`;
 
-export default function ActorProfile({ name, img }) {
-    return (
-        <Wrapper>
-            <p>{name}</p>
-            <img src={img} alt={name} height='100' width="auto" />
-        </Wrapper>
-    )
+export default function ActorProfile({ name, img, list }) {
+  return (
+    <Wrapper>
+      <Actor name={name} img={img} />
+
+      <MovieList list={list} />
+    </Wrapper>
+  );
 }
