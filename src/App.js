@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import _ from 'lodash'
+import { debounce } from 'lodash'
+
+import ActorProfile from './components/actorProfile'
 
 
 function App() {
@@ -9,31 +11,34 @@ function App() {
   const [text, setText] = useState('');
   const [results, setResults] = useState([]);
 
-  const search = (text) => {
-    setText(text)
+  
+
+  const search = () => {
     axios.get(`https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${text}&page=1&include_adult=false`)
       .then(function (response) {
-        setResults(response.data.results.filter(actor => actor.known_for_department === 'Acting'))
+        setResults(response.data.results.filter(actor => actor.known_for_department === 'Acting' && actor.popularity > 5))
       })
       .catch(function (error) {
         console.log(error);
       });
   }
-
-  console.log(results)
+  
+  const debouncedSearch = debounce(search, 500);
 
   return (
 
     <div className="App">
-      <header className="App-header">
+    
 
         <input
           id="text"
           maxLength="50"
           value={text}
-          placeholder="Enter your parlay Name"
-          onChange={v =>
-            search(v.target.value)
+          placeholder="Enter Actor Name"
+          onChange={event => {
+              setText(event.target.value);
+              debouncedSearch(event.target.value);
+            }
           }
         />
 
@@ -41,16 +46,17 @@ function App() {
         {
           results.slice(0, 5).map(actor => {
             return (
-              <>
-                <p>{actor.name}</p>
-                <img src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} height='100px' width="auto" />
-              </>
+              <ActorProfile
+                key={actor.name}
+                name={actor.name}
+                img={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
+              />
             )
           })
         }
 
 
-      </header>
+    
     </div>
   );
 }
