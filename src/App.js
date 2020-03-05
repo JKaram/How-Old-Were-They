@@ -35,6 +35,7 @@ function App() {
           maxLength="50"
           value={text}
           placeholder="Enter Actor Name"
+          autocomplete="off"
           onChange={event => {
               setText(event.target.value);
               debouncedSearch(event.target.value);
@@ -42,7 +43,7 @@ function App() {
           }
         />
 
-
+      
         {
           results.slice(0, 5).map(actor => {
             return (
