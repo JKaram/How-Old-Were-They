@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import { debounce } from 'lodash'
+import styled from 'styled-components'
 
 import ActorProfile from './components/actorProfile'
+import SearchBox from './components/searchBox'
 
+const Wrapper = styled.div`
+  width: 600px;
+  margin: 0 auto;
+`
 
 function App() {
 
@@ -27,21 +33,14 @@ function App() {
 
   return (
 
-    <div className="App">
+    <Wrapper>
     
-
-        <input
-          id="text"
-          maxLength="50"
-          value={text}
-          placeholder="Enter Actor Name"
-          autocomplete="off"
-          onChange={event => {
-              setText(event.target.value);
-              debouncedSearch(event.target.value);
-            }
-          }
-        />
+      <SearchBox
+        text={text}
+        setText={setText}
+        debouncedSearch={debouncedSearch}
+      />
+    
 
       
         {
@@ -58,7 +57,7 @@ function App() {
 
 
     
-    </div>
+    </Wrapper>
   );
 }
 
