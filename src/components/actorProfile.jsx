@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Actor from "./actor";
@@ -9,11 +9,13 @@ const Wrapper = styled.div`
 `;
 
 export default function ActorProfile({ name, img, list }) {
+  const [showList, setShowList] = useState(false);
+
   return (
     <Wrapper>
-      <Actor name={name} img={img} />
+      <Actor name={name} img={img} onClick={() => setShowList(!showList)} />
 
-      <MovieList list={list} />
+      {showList && <MovieList list={list} />}
     </Wrapper>
   );
 }

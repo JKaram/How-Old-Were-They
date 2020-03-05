@@ -8,8 +8,6 @@ const Wrapper = styled.div`
 `;
 
 export default function MovieList({ list }) {
-  console.log(list);
-
   return (
     <Wrapper>
       {list.map(movie => {
