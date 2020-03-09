@@ -5,14 +5,16 @@ const Wrapper = styled.div`
     display:flex;
     flex-direction:column;
 
-    background:red;
+    
 `;
 
-export default function Actor({ name, img, onClick }) {
+export default function Actor({ name, img, onClick, age}) {
+  
   return (
     <Wrapper onClick={onClick}>
       {name}
       <img src={img} alt={name} width="100px" height="auto" />
+      {age}
     </Wrapper>
   );
 }

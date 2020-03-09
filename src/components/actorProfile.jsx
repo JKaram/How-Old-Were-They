@@ -8,20 +8,25 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default function ActorProfile({ name, img, list, getAge }) {
+export default function ActorProfile({ name, img, list, id, getAge }) {
   const [showList, setShowList] = useState(false);
+  const [age, setAge] = useState(0);
+
+
+   getAge(id).then(val => setAge(val));
+  
 
   return (
     <Wrapper>
       <Actor
+        id={id}
         name={name}
         img={img}
         onClick={() => {
           setShowList(!showList);
-          getAge();
         }}
+        age={age}
       />
-
       {showList && <MovieList list={list} />}
     </Wrapper>
   );
