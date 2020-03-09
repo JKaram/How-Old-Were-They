@@ -31,6 +31,17 @@ function App() {
       });
   }
 
+  const getAge = (actorId) => () => {
+    axios.get(`https://api.themoviedb.org/3/person/${actorId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
+    .then(function (response) {
+      console.log(response.data.birthday, 'RESPONSE')
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+
   const debouncedSearch = debounce(search, 500);
   return (
 
@@ -50,6 +61,7 @@ function App() {
               name={actor.name}
               img={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
               list={actor.known_for}
+              getAge={getAge(actor.id)}
             />
           )
         })
