@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Actor from "./actor";
@@ -8,13 +8,15 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default function ActorProfile({ name, img, list, id, getAge }) {
+export default function ActorProfile({ name, img, list, id, getActorInfo }) {
   const [showList, setShowList] = useState(false);
-  const [age, setAge] = useState(0);
+  const [actorInfo, setActorInfo] = useState({});
 
-
-   getAge(id).then(val => setAge(val));
-  
+  useEffect(() => {
+    if (id) {
+      getActorInfo(id).then(val => setActorInfo(val));
+    }
+  }, [id, getActorInfo]);
 
   return (
     <Wrapper>
@@ -25,9 +27,9 @@ export default function ActorProfile({ name, img, list, id, getAge }) {
         onClick={() => {
           setShowList(!showList);
         }}
-        age={age}
+        actorBirthday={actorInfo.birthday}
       />
-      {showList && <MovieList list={list} />}
+      {showList && <MovieList list={list} actorBirthday={actorInfo.birthday} />}
     </Wrapper>
   );
 }

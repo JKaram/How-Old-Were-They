@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import moment from "moment";
 
 const Wrapper = styled.div`
     display:flex;
     flex-direction:column;
 `;
 
-export default function Movie({ title, backdrop_path }) {
+export default function Movie({ title, release_date, backdrop_path, actorBirthday }) {
 
   return (
     <Wrapper>
@@ -17,6 +18,7 @@ export default function Movie({ title, backdrop_path }) {
         height="100px"
         width="auto"
       />
+      {moment(release_date).diff(actorBirthday,'years')}
     </Wrapper>
   );
 }

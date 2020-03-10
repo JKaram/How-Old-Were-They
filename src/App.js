@@ -30,11 +30,11 @@ function App() {
       });
   }
 
-  const getAge = (actorId) => {
+  const getActorInfo = (actorId) => {
     return (
       axios.get(`https://api.themoviedb.org/3/person/${actorId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
         .then(function (response) {
-          return moment().diff(response.data.birthday, 'years')
+          return response.data
         })
         .catch(function (error) {
           console.log(error);
@@ -63,7 +63,7 @@ function App() {
               name={actor.name}
               img={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
               list={actor.known_for}
-              getAge={getAge}
+              getActorInfo={getActorInfo}
             />
           )
         })
