@@ -32,7 +32,7 @@ function App() {
 
   const getActorInfo = (actorId) => {
     return (
-      axios.get(`https://api.themoviedb.org/3/person/${actorId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
+      axios.get(`https://api.themoviedb.org/3/person/${actorId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=credits`)
         .then(function (response) {
           return response.data
         })

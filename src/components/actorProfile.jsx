@@ -17,7 +17,6 @@ export default function ActorProfile({ name, img, list, id, getActorInfo }) {
       getActorInfo(id).then(val => setActorInfo(val));
     }
   }, [id, getActorInfo]);
-
   return (
     <Wrapper>
       <Actor
@@ -29,7 +28,7 @@ export default function ActorProfile({ name, img, list, id, getActorInfo }) {
         }}
         actorBirthday={actorInfo.birthday}
       />
-      {showList && <MovieList list={list} actorBirthday={actorInfo.birthday} />}
+      {showList && <MovieList list={actorInfo.credits.cast} actorBirthday={actorInfo.birthday} />}
     </Wrapper>
   );
 }

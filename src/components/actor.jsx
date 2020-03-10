@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import moment from 'moment';
 
 const Wrapper = styled.div`
     display:flex;
@@ -12,7 +13,7 @@ export default function Actor({ name, img, onClick, actorBirthday}) {
     <Wrapper onClick={onClick}>
       {name}
       <img src={img} alt={name} width="100px" height="auto" />
-      {actorBirthday}
+      {moment().diff(actorBirthday, 'years')}
     </Wrapper>
   );
 }
