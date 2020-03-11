@@ -4,12 +4,13 @@ import Modal from "react-modal";
 
 import Movie from "./movie";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
 
-export default function MovieList({ list, actorBirthday, showList, toggleModal }) {
+export default function MovieList({
+  list,
+  actorBirthday,
+  showList,
+  toggleModal
+}) {
   list = list
     .filter(movie =>
       movie.release_date && movie.poster_path && movie.vote_count > 100
