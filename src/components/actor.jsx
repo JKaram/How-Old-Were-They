@@ -5,37 +5,39 @@ import moment from "moment";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+
+  margin: 5px 5px;
   height: 250px;
 
   background-image: url(${props => props.img});
   background-size: cover;
 
+  border: 5px solid #00adb5;
   cursor: pointer;
 `;
 
-const Header = styled.header`
-  background-color: rgba(255, 255, 255);
-  
+const Footer = styled.footer`
+  display: flex;
   width: 200px;
+
+  background-color: #393e46;
+  color: #eeeeee;
+  font-weight: bold;
+  text-align: center;
 `;
 
-const Age = styled.div`
-  margin: auto;
-  display: none;
-  font-size: 32px;
-
-  color: rgba(255, 255, 255);
-
-  ${Wrapper}:hover & {
-    display: block;
-  }
+const Info = styled.div`
+  color: #eeeeee;
 `;
 
 export default function Actor({ name, img, onClick, actorBirthday }) {
   return (
     <Wrapper onClick={onClick} img={img}>
-      <Header>{name}</Header>
-      <Age>{moment().diff(actorBirthday, "years")}</Age>
+      <Footer>
+        <Info>{name}</Info>
+        <Info>{moment().diff(actorBirthday, "years")}</Info>
+      </Footer>
     </Wrapper>
   );
 }

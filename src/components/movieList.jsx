@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Modal from "react-modal";
 
 import Movie from "./movie";
 
@@ -8,7 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-export default function MovieList({ list, actorBirthday }) {
+export default function MovieList({ list, actorBirthday, showList, toggleModal }) {
   list = list
     .filter(movie =>
       movie.release_date && movie.poster_path && movie.vote_count > 100
@@ -24,7 +25,8 @@ export default function MovieList({ list, actorBirthday }) {
     );
 
   return (
-    <Wrapper>
+    <Modal isOpen={showList} ariaHideApp={false}>
+      <button onClick={() => toggleModal()}>close</button>
       {list.map(movie => {
         return (
           <Movie
@@ -36,6 +38,6 @@ export default function MovieList({ list, actorBirthday }) {
           />
         );
       })}
-    </Wrapper>
+    </Modal>
   );
 }
