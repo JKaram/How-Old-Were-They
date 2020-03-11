@@ -7,24 +7,29 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: flex-end;
 
-  margin: 5px 5px;
+  margin: 20px auto;
   height: 250px;
 
   background-image: url(${props => props.img});
   background-size: cover;
 
   border: 5px solid #00adb5;
+  
+  &:hover {
+    border: 5px solid rgba(255,255,255); 
+  }
   cursor: pointer;
 `;
 
 const Footer = styled.footer`
   display: flex;
+  justify-content: space-between;
   width: 200px;
+  padding: 2px 5px;
 
   background-color: #393e46;
   color: #eeeeee;
   font-weight: bold;
-  text-align: center;
 `;
 
 const Info = styled.div`
