@@ -9,7 +9,7 @@ export default function SearchBox({ text, setText, debouncedSearch }) {
     <Search
       id="text"
       value={text}
-      autocomplete="off"
+      autoComplete="off"
       maxLength="50"
       placeholder="Enter Actor Name"
       onChange={event => {

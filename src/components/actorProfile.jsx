@@ -17,6 +17,7 @@ export default function ActorProfile({ name, img, list, id, getActorInfo }) {
       getActorInfo(id).then(val => setActorInfo(val));
     }
   }, [id, getActorInfo]);
+  
   return (
     <Wrapper>
       <Actor

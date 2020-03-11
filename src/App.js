@@ -16,6 +16,11 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `
 
+const SearchResults = styled.div`
+  display:flex;
+  flex-wrap: wrap;
+`
+
 function App() {
   const [text, setText] = useState('');
   const [results, setResults] = useState([]);
@@ -23,7 +28,7 @@ function App() {
   const search = () => {
     axios.get(`https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&search_type=ngram&language=en-US&query=${text}&page=1&include_adult=false&append_to_response=id`)
       .then(function (response) {
-        setResults(response.data.results.filter(actor => actor.known_for_department === 'Acting' && actor.popularity > 3))
+        setResults(response.data.results.filter(actor => actor.known_for_department === 'Acting' && actor.popularity > 3 && actor.profile_path))
       })
       .catch(function (error) {
         console.log(error);
@@ -54,20 +59,22 @@ function App() {
         setText={setText}
         debouncedSearch={debouncedSearch}
       />
-      {
-        results.slice(0, 5).map(actor => {
-          return (
-            <ActorProfile
-              key={actor.id}
-              id={actor.id}
-              name={actor.name}
-              img={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
-              list={actor.known_for}
-              getActorInfo={getActorInfo}
-            />
-          )
-        })
-      }
+      <SearchResults>
+        {
+          results.slice(0, 10).map(actor => {
+            return (
+              <ActorProfile
+                key={actor.id}
+                id={actor.id}
+                name={actor.name}
+                img={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
+                list={actor.known_for}
+                getActorInfo={getActorInfo}
+              />
+            )
+          })
+        }
+      </SearchResults>
     </Wrapper>
   );
 }
