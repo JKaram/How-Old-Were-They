@@ -2,8 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 
 import Movie from "./movie";
-
-import './Modal.css'
+import Button from "../partials/button";
 
 export default function MovieList({
   list,
@@ -26,8 +25,8 @@ export default function MovieList({
     );
 
   return (
-    <Modal className="" isOpen={showList} ariaHideApp={false}>
-      <button onClick={() => toggleModal()}>close</button>
+    <Modal isOpen={showList} ariaHideApp={false}>
+      <Button toggleModal={toggleModal} />
       {list.map(movie => {
         return (
           <Movie
