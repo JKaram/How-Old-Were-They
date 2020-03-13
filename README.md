@@ -1,13 +1,13 @@
 ## Actor Ages
 ### https://actor-ages.herokuapp.com/
 
-Actor Ages lets you search for a movie actor  and will show how old they were while they filmed a particular movie.
+Actor Ages lets a user search for an actor and find out how they were while filming a particular movie.
 
 **This project is still a work in progress**
 
 ## Why is this useful?
 
-That is a great question! This is my first project post graduation. I wanted to practice more with React, APIs and styling. It's not particularly useful, but I find myself looking up this information manually and thought at least **one** other person might use it.
+That is a great question! This is my first project post graduation. I wanted more practice with React, APIs and styling. I find myself looking up this information manually and thought at least **one** other person might use it.
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/JKaram/actor-ages)
 
