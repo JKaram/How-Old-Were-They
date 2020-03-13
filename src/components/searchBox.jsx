@@ -7,6 +7,7 @@ const Wrapper = styled.div`
 `;
 const Search = styled.input`
   width: 100%;
+  padding: 5px 10px;
 `;
 
 export default function SearchBox({ text, setText, debouncedSearch }) {
