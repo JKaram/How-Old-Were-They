@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import Modal from "react-modal";
 
 import Movie from "./movie";
 
+import './Modal.css'
 
 export default function MovieList({
   list,
@@ -26,7 +26,7 @@ export default function MovieList({
     );
 
   return (
-    <Modal isOpen={showList} ariaHideApp={false}>
+    <Modal className="" isOpen={showList} ariaHideApp={false}>
       <button onClick={() => toggleModal()}>close</button>
       {list.map(movie => {
         return (
