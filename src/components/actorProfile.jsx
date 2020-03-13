@@ -33,6 +33,7 @@ export default function ActorProfile({ name, img, list, id, getActorInfo }) {
         }}
         actorBirthday={actorInfo.birthday}
       />
+
       {showList && (
         <MovieList
           showList

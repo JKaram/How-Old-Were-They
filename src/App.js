@@ -3,7 +3,6 @@ import './App.css';
 import axios from 'axios';
 import { debounce } from 'lodash'
 import styled from 'styled-components'
-import moment from 'moment'
 
 import ActorProfile from './components/actorProfile'
 import SearchBox from './components/searchBox'
@@ -19,6 +18,12 @@ const Wrapper = styled.div`
 const SearchResults = styled.div`
   display:flex;
   flex-direction: column;
+`
+
+const Loading = styled.div` 
+margin: 15% auto;
+color:white;
+
 `
 
 function App() {
@@ -60,6 +65,8 @@ function App() {
         debouncedSearch={debouncedSearch}
       />
       <SearchResults>
+      {!results.length && (<Loading>No results</Loading>)}
+
         {
           results.slice(0, 10).map(actor => {
             return (
