@@ -1,5 +1,5 @@
 ## Actor Ages
-### https://actor-ages.herokuapp.com/
+### https://actor-ages.herokuapp.com/ (takes 30 seconds to boot up)
 
 Actor Ages lets a user search for an actor and find out how they were while filming a particular movie.
 
