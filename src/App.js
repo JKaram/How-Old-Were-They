@@ -29,6 +29,7 @@ color:white;
 function App() {
   const [text, setText] = useState('');
   const [results, setResults] = useState([]);
+  console.log(typeof results)
 
   const search = () => {
     axios.get(`https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&search_type=ngram&language=en-US&query=${text}&page=1&include_adult=false&append_to_response=id`)
