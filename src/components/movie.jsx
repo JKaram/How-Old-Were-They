@@ -1,4 +1,5 @@
 import React from "react";
+import Img from 'react-image'
 import styled from "styled-components";
 import moment from "moment";
 
