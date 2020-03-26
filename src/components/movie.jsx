@@ -4,6 +4,7 @@ import styled from "styled-components";
 import moment from "moment";
 
 import Info from "../partials/info";
+import loading from '../images/loading-png-gif.gif'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,6 +15,10 @@ const Wrapper = styled.div`
   border: 2px solid rgba(0,0,0);
 `;
 
+const Loading = styled.img`
+  margin: auto;
+`
+
 export default function Movie({
   title,
   release_date,
@@ -22,8 +27,13 @@ export default function Movie({
 }) {
   return (
     <Wrapper>
-      <img
+      <Img
         src={`https://image.tmdb.org/t/p/original${poster_path}`}
+        loader={<Loading 
+                 src={loading} 
+                 height="50px"
+                 width="50px"
+               />}
         alt={title}
         height="300px"
         width="200px"
