@@ -3,7 +3,7 @@ import axios from "axios";
 import { debounce } from "lodash";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 
-import { ActorProfile, SearchBox, MainTitle } from "components/common/index";
+import { PageLayout, ActorProfile, SearchBox } from "components/common/index";
 
 const SearchResults = styled.div`
   display: flex;
@@ -34,7 +34,6 @@ const theme = {
 function App() {
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
-  console.log(typeof results);
 
   const search = () => {
     axios
@@ -73,29 +72,30 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <MainTitle />
       <GlobalStyle />
-      <SearchBox
-        text={text}
-        setText={setText}
-        debouncedSearch={debouncedSearch}
-      />
-      <SearchResults>
-        {!results.length && <Loading>No results</Loading>}
+      <PageLayout>
+        <SearchBox
+          text={text}
+          setText={setText}
+          debouncedSearch={debouncedSearch}
+        />
+        <SearchResults>
+          {!results.length && <Loading>No results</Loading>}
 
-        {results.slice(0, 10).map((actor) => {
-          return (
-            <ActorProfile
-              key={actor.id}
-              id={actor.id}
-              name={actor.name}
-              img={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
-              list={actor.known_for}
-              getActorInfo={getActorInfo}
-            />
-          );
-        })}
-      </SearchResults>
+          {results.slice(0, 10).map((actor) => {
+            return (
+              <ActorProfile
+                key={actor.id}
+                id={actor.id}
+                name={actor.name}
+                img={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
+                list={actor.known_for}
+                getActorInfo={getActorInfo}
+              />
+            );
+          })}
+        </SearchResults>
+      </PageLayout>
     </ThemeProvider>
   );
 }

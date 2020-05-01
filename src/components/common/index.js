@@ -6,3 +6,4 @@ export { Movie } from "./Movie";
 export { Info } from "./Info";
 export { SearchBox } from "./SearchBox";
 export { MainTitle } from "./MainTitle";
+export { PageLayout } from "./PageLayout";
