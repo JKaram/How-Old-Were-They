@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import Actor from "./actor";
-import MovieList from "./movieList";
+import { Actor, MovieList } from "./index";
 
 const Wrapper = styled.div`
   display: flex;
 `;
 
-export default function ActorProfile({ name, img, list, id, getActorInfo }) {
+export function ActorProfile({ name, img, list, id, getActorInfo }) {
   const [showList, setShowList] = useState(false);
   const [actorInfo, setActorInfo] = useState({});
 

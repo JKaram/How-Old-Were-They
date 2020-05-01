@@ -1,15 +1,9 @@
 import React from "react";
 import Modal from "react-modal";
 
-import Movie from "./movie";
-import Button from "./button";
+import { Movie, Button } from "./index";
 
-export default function MovieList({
-  list,
-  actorBirthday,
-  showList,
-  toggleModal,
-}) {
+export function MovieList({ list, actorBirthday, showList, toggleModal }) {
   list = list
     .filter((movie) =>
       movie.release_date && movie.poster_path && movie.vote_count > 100

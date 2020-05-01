@@ -10,7 +10,7 @@ const Search = styled.input`
   padding: 5px 10px;
 `;
 
-export default function SearchBox({ text, setText, debouncedSearch }) {
+export function SearchBox({ text, setText, debouncedSearch }) {
   return (
     <Wrapper>
       <Search

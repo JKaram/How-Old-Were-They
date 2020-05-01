@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import moment from "moment";
-import Info from "./info";
+import { Info } from "./index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   cursor: pointer;
 `;
 
-export default function Actor({ name, img, onClick, actorBirthday }) {
+export function Actor({ name, img, onClick, actorBirthday }) {
   return (
     <Wrapper onClick={onClick} img={img}>
       <Info name={name} age={moment().diff(actorBirthday, "years")} />

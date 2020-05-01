@@ -10,6 +10,6 @@ const Title = styled.h1`
   font-family: "Permanent Marker", cursive;
 `;
 
-export default function MainTitle() {
+export function MainTitle() {
   return <Title>HOW OLD WERE THEY?</Title>;
 }

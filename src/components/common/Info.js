@@ -12,15 +12,15 @@ const Footer = styled.footer`
   font-weight: bold;
 `;
 
-const Info = styled.div`
+const Information = styled.div`
   color: #eeeeee;
 `;
 
-export default function Actor({ name, age}) {
+export function Info({ name, age }) {
   return (
     <Footer>
-      <Info>{name}</Info>
-      <Info>{age}</Info>
+      <Information>{name}</Information>
+      <Information>{age}</Information>
     </Footer>
   );
 }

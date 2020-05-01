@@ -3,7 +3,7 @@ import Img from "react-image";
 import styled from "styled-components";
 import moment from "moment";
 
-import Info from "./info";
+import { Info } from "./index";
 // import loading from "images/loading-png-gif.gif";
 
 const Wrapper = styled.div`
@@ -19,12 +19,7 @@ const Wrapper = styled.div`
 //   margin: auto;
 // `;
 
-export default function Movie({
-  title,
-  release_date,
-  poster_path,
-  actorBirthday,
-}) {
+export function Movie({ title, release_date, poster_path, actorBirthday }) {
   return (
     <Wrapper>
       <Img

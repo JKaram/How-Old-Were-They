@@ -3,10 +3,7 @@ import axios from "axios";
 import { debounce } from "lodash";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 
-import ActorProfile from "./components/common/actorProfile";
-import SearchBox from "./components/common/searchBox";
-
-import MainTitle from "./components/common/mainTitle";
+import { ActorProfile, SearchBox, MainTitle } from "components/common/index";
 
 const SearchResults = styled.div`
   display: flex;
