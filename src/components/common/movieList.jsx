@@ -2,16 +2,16 @@ import React from "react";
 import Modal from "react-modal";
 
 import Movie from "./movie";
-import Button from "../partials/button";
+import Button from "./button";
 
 export default function MovieList({
   list,
   actorBirthday,
   showList,
-  toggleModal
+  toggleModal,
 }) {
   list = list
-    .filter(movie =>
+    .filter((movie) =>
       movie.release_date && movie.poster_path && movie.vote_count > 100
         ? movie
         : null
@@ -27,7 +27,7 @@ export default function MovieList({
   return (
     <Modal isOpen={showList} ariaHideApp={false}>
       <Button toggleModal={toggleModal} />
-      {list.map(movie => {
+      {list.map((movie) => {
         return (
           <Movie
             key={movie.id}

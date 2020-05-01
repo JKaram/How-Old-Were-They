@@ -19,7 +19,7 @@ export default function SearchBox({ text, setText, debouncedSearch }) {
         autoComplete="off"
         maxLength="50"
         placeholder="Enter Actor Name"
-        onChange={event => {
+        onChange={(event) => {
           setText(event.target.value);
           debouncedSearch(event.target.value);
         }}

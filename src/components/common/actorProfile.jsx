@@ -18,7 +18,7 @@ export default function ActorProfile({ name, img, list, id, getActorInfo }) {
 
   useEffect(() => {
     if (id) {
-      getActorInfo(id).then(val => setActorInfo(val));
+      getActorInfo(id).then((val) => setActorInfo(val));
     }
   }, [id, getActorInfo]);
 

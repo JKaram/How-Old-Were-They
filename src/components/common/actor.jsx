@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import moment from "moment";
-import Info from "../partials/info";
+import Info from "./info";
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   margin: 20px auto;
   height: 250px;
 
-  background-image: url(${props => props.img});
+  background-image: url(${(props) => props.img});
   background-size: cover;
 
   border: 5px solid #00adb5;
