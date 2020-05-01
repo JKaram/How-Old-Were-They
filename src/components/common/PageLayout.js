@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MovieList } from "./index";
-import { MainTitle } from "./MainTitle";
+import { MainTitle } from "./index";
 
 const Content = styled.main`
   max-width: 800px;
@@ -9,6 +8,7 @@ const Content = styled.main`
   padding: 0 16px;
   box-sizing: border-box;
   font-family: "Open Sans";
+
   h1,
   h2,
   h3,
