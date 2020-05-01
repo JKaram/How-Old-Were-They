@@ -4,6 +4,6 @@ export { ActorProfile } from "./ActorProfile";
 export { Button } from "./Button";
 export { Movie } from "./Movie";
 export { Info } from "./Info";
-export { SearchBox } from "./SearchBox";
+export * from "./SearchBox";
 export { MainTitle } from "./MainTitle";
 export { PageLayout } from "./PageLayout";

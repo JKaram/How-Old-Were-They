@@ -7,7 +7,8 @@ import { PageLayout, ActorProfile, SearchBox } from "components/common/index";
 
 const SearchResults = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 const Loading = styled.div`
@@ -34,6 +35,7 @@ const theme = {
 function App() {
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const search = () => {
     axios
@@ -49,6 +51,7 @@ function App() {
               actor.profile_path
           )
         );
+        setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
@@ -75,9 +78,15 @@ function App() {
       <GlobalStyle />
       <PageLayout>
         <SearchBox
-          text={text}
-          setText={setText}
-          debouncedSearch={debouncedSearch}
+          id="text"
+          value={text}
+          autoComplete="off"
+          maxLength="50"
+          placeholder="Enter Actor Name"
+          onChange={(event) => {
+            setText(event.target.value);
+            debouncedSearch(event.target.value);
+          }}
         />
         <SearchResults>
           {!results.length && <Loading>No results</Loading>}

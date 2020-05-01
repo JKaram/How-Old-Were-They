@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Title = styled.h1`
+  margin: 0;
   font-size: 3rem;
   color: rgba(189, 147, 249);
   text-align: center;
