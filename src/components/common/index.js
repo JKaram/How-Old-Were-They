@@ -1,10 +1,10 @@
-export { Actor } from "./Actor";
-export { MovieList } from "./MovieList";
-export { ActorProfile } from "./ActorProfile";
-export { Button } from "./Button";
-export { Movie } from "./Movie";
-export { Info } from "./Info";
+export * from "./Actor";
+export * from "./MovieList";
+export * from "./ActorProfile";
+export * from "./Button";
+export * from "./Movie";
+export * from "./Info";
 export * from "./SearchBox";
 export * from "./MainTitle";
-export { PageLayout } from "./PageLayout";
+export * from "./PageLayout";
 export * from "./Loading";
