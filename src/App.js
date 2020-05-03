@@ -37,7 +37,6 @@ function App() {
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [cancel, setCancel] = useState("");
 
   const search = () => {
     let source = axios.CancelToken.source();
