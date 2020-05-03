@@ -5,6 +5,6 @@ export * from "./Button";
 export * from "./Movie";
 export * from "./Info";
 export * from "./SearchBox";
-export * from "./MainTitle";
+export * from "./Title";
 export * from "./PageLayout";
 export * from "./Loading";

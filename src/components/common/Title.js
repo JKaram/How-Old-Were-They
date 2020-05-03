@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const MainTitle = styled.h1`
+const Title = styled.h1`
   margin: 0;
   font-size: 3rem;
   color: rgba(189, 147, 249);
@@ -12,4 +12,4 @@ const MainTitle = styled.h1`
   background: rgb(56, 58, 89);
 `;
 
-export { MainTitle };
+export { Title };
