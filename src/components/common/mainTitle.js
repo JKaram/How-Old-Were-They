@@ -7,10 +7,11 @@ const Title = styled.h1`
   color: rgba(189, 147, 249);
   text-align: center;
   padding: 10px;
-  border: 1px solid #fff;
-  font-family: "Permanent Marker", cursive;
+  border-bottom: 1px solid rgb(80, 250, 123);
+  font-family: "Lobster", cursive;
+  background: rgb(56, 58, 89);
 `;
 
 export function MainTitle() {
-  return <Title>HOW OLD WERE THEY?</Title>;
+  return <Title>How Old Were They?</Title>;
 }

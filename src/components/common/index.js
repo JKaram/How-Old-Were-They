@@ -7,3 +7,4 @@ export { Info } from "./Info";
 export * from "./SearchBox";
 export { MainTitle } from "./MainTitle";
 export { PageLayout } from "./PageLayout";
+export * from "./Loading";
