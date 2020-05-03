@@ -22,7 +22,7 @@ const Content = styled.main`
 export function PageLayout({ children }) {
   return (
     <>
-      <MainTitle />
+      <MainTitle>How Old Were They?</MainTitle>
       <Content>{children}</Content>
     </>
   );
