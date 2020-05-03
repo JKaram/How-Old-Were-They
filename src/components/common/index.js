@@ -5,6 +5,6 @@ export { Button } from "./Button";
 export { Movie } from "./Movie";
 export { Info } from "./Info";
 export * from "./SearchBox";
-export { MainTitle } from "./MainTitle";
+export * from "./MainTitle";
 export { PageLayout } from "./PageLayout";
 export * from "./Loading";
