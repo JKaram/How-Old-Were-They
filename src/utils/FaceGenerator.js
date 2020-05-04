@@ -8,6 +8,5 @@ function GenerateFace(faces) {
   return faces[Math.floor(Math.random() * faces.length)];
 }
 const RandomFace = GenerateFace(faces);
-console.log(RandomFace, "Random");
 
 export { RandomFace };

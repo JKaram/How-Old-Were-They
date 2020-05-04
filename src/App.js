@@ -52,7 +52,7 @@ function App() {
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
   const [message, setMessage] = useState(
-    "Search how old your favoite actor was while filming a movie"
+    "Hello! Please search for an actor and find out how they were when they filmed thier movies."
   );
   const [loading, setLoading] = useState(false);
 
@@ -75,7 +75,7 @@ function App() {
       setLoading(false);
       results.length
         ? setMessage(
-            "Search how old your favoite actor was while filming a movie"
+            "Hello!, Please search for an actor and find out how they were when they filmed thier movies!"
           )
         : setMessage("Hmm No Results");
     }, 2000);
@@ -114,9 +114,18 @@ function App() {
           }}
         />
 
-        {!loading && !results.length && <Face src={RandomFace} />}
+        {!loading && !results.length ? (
+          <>
+            <Message>{message}</Message> <Face src={RandomFace} />
+          </>
+        ) : (
+          <div></div>
+        )}
         {loading ? (
-          <Loading src={RandomFace} />
+          <>
+            <Message>{message}</Message>
+            <Loading src={RandomFace} />
+          </>
         ) : (
           <SearchResults>
             {results.slice(0, 10).map((actor) => {

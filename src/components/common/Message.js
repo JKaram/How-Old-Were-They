@@ -1,58 +1,41 @@
 import styled from "styled-components";
 
-const Message = styled.p`
-  position: relative;
+const Message = styled.div`
   width: 300px;
-  text-align: center;
-  line-height: 1.4em;
-  margin: 40px auto;
-  background-color: #fff;
-  border: 8px solid #333;
-  border-radius: 30px;
-  font-family: sans-serif;
+  margin: 5% auto 0;
+  border: 4px solid #00bfb6;
   padding: 20px;
-  font-size: large;
+  text-align: center;
+  font-weight: 900;
+  color: #00bfb6;
+  font-family: arial;
+  position: relative;
 
-  &:after,
   &:before {
-    content: "Jamie";
+    content: "";
+    width: 0px;
+    height: 0px;
     position: absolute;
-    width: 0;
-    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #00bfb6;
+    border-bottom: 10px solid transparent;
+    right: 50%;
+    bottom: -23px;
+  }
+
+  &:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    border-bottom: 10px solid transparent;
+    right: 50%;
+    bottom: -18px;
   }
 `;
 
 export { Message };
-
-// p.bubble {
-// 	position: relative;
-// 	width: 300px;
-// 	text-align: center;
-// 	line-height: 1.4em;
-// 	margin: 40px auto;
-// 	background-color: #fff;
-// 	border: 8px solid #333;
-// 	border-radius: 30px;
-// 	font-family: sans-serif;
-// 	padding: 20px;
-// 	font-size: large;
-// }
-
-// p.bubble:before,
-// p.bubble:after {
-
-// }
-
-// p.speech:before {
-// 	left: 30px;
-// 	bottom: -50px;
-// 	border: 25px solid;
-// 	border-color: #333 transparent transparent #333;
-// }
-
-// p.speech:after {
-// 	left: 38px;
-// 	bottom: -30px;
-// 	border: 15px solid;
-// 	border-color: #fff transparent transparent #fff;
-// }
