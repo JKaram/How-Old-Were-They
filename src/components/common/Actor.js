@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   border: 5px solid ${(p) => p.theme.header};
 
   &:hover {
-    border: 5px solid ${(p) => p.theme.pink};
+    border: 5px solid ${(p) => p.theme.comment};
   }
   cursor: pointer;
 

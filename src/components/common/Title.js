@@ -6,6 +6,7 @@ const Title = styled.h1`
   font-family: "Lobster", cursive;
   font-size: 3rem;
   text-align: center;
+  color: ${(p) => p.theme.pink};
 `;
 
 export { Title };

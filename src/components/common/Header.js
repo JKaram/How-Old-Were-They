@@ -7,7 +7,7 @@ const Wrapper = styled.header`
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border-bottom: 6px solid rgb(80, 250, 123);
+  border-bottom: 6px solid ${(p) => p.theme.comment};
   background: rgb(56, 58, 89);
 `;
 
