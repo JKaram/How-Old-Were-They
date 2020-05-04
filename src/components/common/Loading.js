@@ -16,4 +16,10 @@ const Loading = styled.img`
   display: block;
 `;
 
-export { Loading };
+const Face = styled.img`
+  margin: 10% auto;
+  height: 10rem;
+  display: block;
+`;
+
+export { Loading, Face };

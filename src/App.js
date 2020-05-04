@@ -9,6 +9,8 @@ import {
   ActorProfile,
   SearchBox,
   Loading,
+  Face,
+  Message,
 } from "components/common/index";
 
 const SearchResults = styled.div`
@@ -23,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    color: white;
   }
 `;
 
@@ -47,10 +50,15 @@ const theme = {
 function App() {
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
+  const [message, setMessage] = useState(
+    "Search how old your favoite actor was while filming a movie"
+  );
   const [loading, setLoading] = useState(false);
 
   const search = async (text) => {
+    if (text === "") return setResults([]);
     setLoading(true);
+    setMessage("1 sec");
     const res = await axios(
       `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&search_type=ngram&language=en-US&query=${text}&page=1&include_adult=false&append_to_response=id`
     );
@@ -60,11 +68,15 @@ function App() {
         actor.popularity > 1 &&
         actor.profile_path
     );
-
     setResults(movies);
 
     setTimeout(function () {
       setLoading(false);
+      results.length
+        ? setMessage(
+            "Search how old your favoite actor was while filming a movie"
+          )
+        : setMessage("Hmm No Results");
     }, 2000);
   };
 
@@ -83,6 +95,8 @@ function App() {
 
   const debouncedSearch = debounce(search, 1000);
 
+  console.log(results.length);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -98,6 +112,8 @@ function App() {
             debouncedSearch(event.target.value);
           }}
         />
+
+        {!loading && !results.length && <Face src={Leo} />}
         {loading ? (
           <Loading src={Leo} />
         ) : (
@@ -114,6 +130,7 @@ function App() {
                 />
               );
             })}
+            <Message />
           </SearchResults>
         )}
       </PageLayout>
