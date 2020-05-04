@@ -10,8 +10,10 @@ const rotation = keyframes`
 `;
 
 const Loading = styled.img`
-  height: 100px;
+  margin: 10% auto;
+  height: 10rem;
   animation: ${rotation} 1s linear infinite;
+  display: block;
 `;
 
 export { Loading };
