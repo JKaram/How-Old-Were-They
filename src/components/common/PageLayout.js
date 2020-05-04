@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "./index";
+import { Title, Header } from "./index";
 
 const Content = styled.main`
   max-width: 800px;
@@ -13,7 +13,7 @@ const Content = styled.main`
 export function PageLayout({ children }) {
   return (
     <>
-      <Title>How Old Were They?</Title>
+      <Header />
       <Content>{children}</Content>
     </>
   );

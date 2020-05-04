@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 const SearchBox = styled.input`
   width: 100%;
-  padding: 10px;
   border-radius: 3px;
-  font-size: 1em;
+  font-size: 1.5em;
   box-sizing: border-box;
-  height: 40px;
+  height: 3rem;
+  margin: 0 auto;
+  display: block;
+  padding: 2px 15px;
 `;
 
 export { SearchBox };

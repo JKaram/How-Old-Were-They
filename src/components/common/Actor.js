@@ -6,7 +6,7 @@ import { Info } from "./index";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 210px;
 
   margin: 30px 0;
 
