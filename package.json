@@ -14,7 +14,8 @@
     "react-image": "^2.4.0",
     "react-modal": "^3.11.2",
     "react-scripts": "3.4.0",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "styled-react-modal": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

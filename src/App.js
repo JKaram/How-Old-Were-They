@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import debounce from "lodash/debounce";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import { search } from "utils/utils";
 import Leo from "images/leo-face.png";
 
 import {
@@ -17,6 +16,16 @@ const SearchResults = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
 `;
+
+// const StyledLink = styled(Link)`
+//   padding: 4px 8px;
+//   display: block;
+//   text-align: center;
+//   box-sizing: border-box;
+//   margin: auto 0;
+//   color: ${(p) => p.theme.bodyFontColor};
+//   font-weight: ${(p) => (p.isActive ? "bold" : "")};
+// `;
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -49,10 +58,10 @@ function App() {
         actor.known_for_department === "Acting" &&
         actor.popularity > 1 &&
         actor.profile_path
-      // actor.birthday
     );
 
     setResults(movies);
+
     setTimeout(function () {
       setLoading(false);
     }, 2000);
@@ -71,7 +80,7 @@ function App() {
       });
   };
 
-  const debouncedSearch = debounce(search, 500);
+  const debouncedSearch = debounce(search, 1000);
 
   return (
     <ThemeProvider theme={theme}>
