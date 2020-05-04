@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { debounce } from "lodash";
+import debounce from "lodash/debounce";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { search } from "utils/utils";
 import Leo from "images/leo-face.png";
 
 import {
@@ -38,30 +39,23 @@ function App() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const search = () => {
-    let source = axios.CancelToken.source();
-    axios
-      .get(
-        `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&search_type=ngram&language=en-US&query=${text}&page=1&include_adult=false&append_to_response=id`,
-        { cancelToken: source.token }
-      )
-      .then(function (response) {
-        // setTimeout(function () {
-        setResults(
-          response.data.results.filter(
-            (actor) =>
-              actor.known_for_department === "Acting" &&
-              actor.popularity > 1 &&
-              actor.profile_path
-          )
-        );
-        source.cancel();
-        setLoading(false);
-        // }, 5000);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  const search = async (text) => {
+    setLoading(true);
+    const res = await axios(
+      `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&search_type=ngram&language=en-US&query=${text}&page=1&include_adult=false&append_to_response=id`
+    );
+    const movies = await res.data.results.filter(
+      (actor) =>
+        actor.known_for_department === "Acting" &&
+        actor.popularity > 1 &&
+        actor.profile_path
+      // actor.birthday
+    );
+
+    setResults(movies);
+    setTimeout(function () {
+      setLoading(false);
+    }, 2000);
   };
 
   const getActorInfo = (actorId) => {
@@ -90,7 +84,6 @@ function App() {
           maxLength="50"
           placeholder="Enter Actor Name"
           onChange={(event) => {
-            // setLoading(true);
             setText(event.target.value);
             debouncedSearch(event.target.value);
           }}
