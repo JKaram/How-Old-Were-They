@@ -12,7 +12,7 @@ const Footer = styled.footer`
   font-weight: bold;
 
   .name {
-    font-size: 1.5em;
+    font-size: 100%;
   }
 `;
 

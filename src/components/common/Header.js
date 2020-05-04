@@ -15,7 +15,6 @@ export function Header() {
   return (
     <Wrapper>
       <Title>How Old Were They?</Title>
-      <p>Find out how old your favorite actors were while filming a movie</p>
     </Wrapper>
   );
 }
