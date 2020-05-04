@@ -5,24 +5,28 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 5px 0;
+  padding: 2px 0;
 
-  background-color: #393e46;
+  background-color: rgb(56, 58, 89);
   color: #eeeeee;
   font-weight: bold;
+
+  .name {
+    font-size: 1.5em;
+  }
 `;
 
 const Information = styled.div`
-  font-size: 1.5em;
-  margin: 2px;
+  font-size: 1em;
+  margin: 2px auto;
   color: #eeeeee;
 `;
 
 export function Info({ name, age }) {
   return (
     <Footer>
-      <Information>{name}</Information>
-      <Information>{age}</Information>
+      <Information className="name">{name}</Information>
+      <Information>{age} years old</Information>
     </Footer>
   );
 }

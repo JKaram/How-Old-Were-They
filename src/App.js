@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     background: ${(p) => p.theme.background};
     min-height: 100vh;
     margin: 0;
-    font-family: 'Kaushan Script'
+    font-family: 'Open Sans', sans-serif;
   }
 `;
 

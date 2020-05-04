@@ -6,14 +6,14 @@ import { Info } from "./index";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 225px;
+  width: 200px;
 
   margin: 30px 0;
 
   border: 5px solid ${(p) => p.theme.header};
 
   &:hover {
-    border: 5px solid ${(p) => p.theme.secondaryColor};
+    border: 5px solid ${(p) => p.theme.cyan};
   }
   cursor: pointer;
 
