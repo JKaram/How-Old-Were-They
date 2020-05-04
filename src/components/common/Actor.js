@@ -6,25 +6,27 @@ import { Info } from "./index";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  width: 225px;
 
-  margin: 20px auto;
-  height: 250px;
+  margin: 30px 0;
 
-  background-image: url(${(props) => props.img});
-  background-size: cover;
-
-  border: 5px solid #00adb5;
+  border: 5px solid ${(p) => p.theme.header};
 
   &:hover {
-    border: 5px solid rgba(255, 255, 255);
+    border: 5px solid ${(p) => p.theme.secondaryColor};
   }
   cursor: pointer;
+
+  > img {
+    height: 300px;
+    width: auto;
+  }
 `;
 
 export function Actor({ name, img, onClick, actorBirthday }) {
   return (
-    <Wrapper onClick={onClick} img={img}>
+    <Wrapper onClick={onClick}>
+      <img src={img} alt={name} />
       <Info name={name} age={moment().diff(actorBirthday, "years")} />
     </Wrapper>
   );

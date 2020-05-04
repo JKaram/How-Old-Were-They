@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const Footer = styled.footer`
   display: flex;
-  justify-content: space-around;
-  width: 200px;
+  flex-direction: column;
+  width: 100%;
   padding: 5px 0;
 
   background-color: #393e46;
@@ -13,6 +13,8 @@ const Footer = styled.footer`
 `;
 
 const Information = styled.div`
+  font-size: 1.5em;
+  margin: 2px;
   color: #eeeeee;
 `;
 

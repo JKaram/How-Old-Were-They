@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import styled from "styled-components";
 
 import { Movie, Button } from "./index";
 

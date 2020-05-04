@@ -17,19 +17,9 @@ const SearchResults = styled.div`
   justify-content: space-around;
 `;
 
-// const StyledLink = styled(Link)`
-//   padding: 4px 8px;
-//   display: block;
-//   text-align: center;
-//   box-sizing: border-box;
-//   margin: auto 0;
-//   color: ${(p) => p.theme.bodyFontColor};
-//   font-weight: ${(p) => (p.isActive ? "bold" : "")};
-// `;
-
 const GlobalStyle = createGlobalStyle`
   body {
-    background: ${(p) => p.theme.bodyBackgroundColor};
+    background: ${(p) => p.theme.background};
     min-height: 100vh;
     margin: 0;
     font-family: 'Kaushan Script'
@@ -39,9 +29,30 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
   primaryColor: "#f8049c",
   secondaryColor: "#fdd54f",
-  bodyBackgroundColor: "rgba(40, 42, 54)",
-  bodyFontColor: "189 147 249",
+  background: "#282a36",
+  header: "#383A59",
+  green: "#50fa7b",
+  purple: "#bd93f9",
+  pink: "#ff79c6",
+  orange: "#ffb86c",
+  red: "#ff5555",
+  yellow: "#f1fa8c",
+  cyan: "#8be9fd",
 };
+
+// Palette	Hex	RGB	HSL	Color Picker Boxes
+// Background	#282a36	40 42 54	231° 15% 18%	Background Color
+// Current Line	#44475a	68 71 90	232° 14% 31%	Current Line Color
+// Selection	#44475a	68 71 90	232° 14% 31%	Selection Color
+// Foreground	#f8f8f2	248 248 242	60° 30% 96%	Foreground Color
+// Comment	#6272a4	98 114 164	225° 27% 51%	Comment Color
+// Cyan	#8be9fd	139 233 253	191° 97% 77%	Cyan Color
+// Green	#50fa7b	80 250 123	135° 94% 65%	Green Color
+// Orange	#ffb86c	255 184 108	31° 100% 71%	Orange Color
+// Pink	#ff79c6	255 121 198	326° 100% 74%	Pink Color
+// Purple	#bd93f9	189 147 249	265° 89% 78%	Purple Color
+// Red	#ff5555	255 85 85	0° 100% 67%	Red Color
+// Yellow	#f1fa8c	241 250 140	65° 92% 76%	Yellow Color
 
 function App() {
   const [text, setText] = useState("");
