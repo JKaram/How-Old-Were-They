@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import debounce from "lodash/debounce";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import Leo from "images/leo-face.png";
+
+import { RandomFace } from "utils/index";
 
 import {
   PageLayout,
@@ -113,9 +114,9 @@ function App() {
           }}
         />
 
-        {!loading && !results.length && <Face src={Leo} />}
+        {!loading && !results.length && <Face src={RandomFace} />}
         {loading ? (
-          <Loading src={Leo} />
+          <Loading src={RandomFace} />
         ) : (
           <SearchResults>
             {results.slice(0, 10).map((actor) => {
@@ -130,7 +131,6 @@ function App() {
                 />
               );
             })}
-            <Message />
           </SearchResults>
         )}
       </PageLayout>
