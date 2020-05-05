@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Message = styled.div`
   width: 300px;
-  margin: 5% auto 0;
+  margin: 10% auto 20px;
   border: 4px solid #00bfb6;
   padding: 20px;
   text-align: center;

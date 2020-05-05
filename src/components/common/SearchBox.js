@@ -3,21 +3,35 @@ import styled from "styled-components";
 
 const SearchBoxWrapper = styled.div`
   display: flex;
+  width: 80%;
+  margin: 0 auto;
   justify-content: center;
 `;
 
 const SearchInput = styled.input`
-  width: 80%;
+  max-width: 500px;
+  width: 100%;
   border-radius: 3px;
   font-size: 1.5em;
   box-sizing: border-box;
   height: 3rem;
-  margin: 0 auto;
+  border: 1px solid #ccc;
+
   display: block;
   padding: 2px 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 `;
 
-const ClearButton = styled.button``;
+const ClearButton = styled.button`
+  width: 50;
+  border: 1px solid #ccc;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: 0;
+  background: white;
+  font-weight: bold;
+`;
 
 export function SearchBox({
   text,
