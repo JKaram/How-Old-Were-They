@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const SearchBoxWrapper = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   justify-content: center;
 `;
@@ -24,7 +24,7 @@ const SearchInput = styled.input`
 `;
 
 const ClearButton = styled.button`
-  width: 50;
+  width: 100px;
   border: 1px solid #ccc;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -61,6 +61,7 @@ export function SearchBox({
             "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
           );
         }}
+        disabled={!text}
       >
         Clear
       </ClearButton>
