@@ -103,15 +103,11 @@ function App() {
       <GlobalStyle />
       <PageLayout>
         <SearchBox
-          id="text"
-          value={text}
-          autoComplete="off"
-          maxLength="50"
-          placeholder="Enter Actor Name"
-          onChange={(event) => {
-            setText(event.target.value);
-            debouncedSearch(event.target.value);
-          }}
+          text={text}
+          setText={setText}
+          debouncedSearch={debouncedSearch}
+          setResults={setResults}
+          setMessage={setMessage}
         />
 
         {!loading && !results.length ? (
