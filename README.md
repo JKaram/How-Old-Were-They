@@ -14,7 +14,7 @@ This is my first project post graduation. I wanted more practice with React, API
 
 ## Screenshots
 
-![How To Use](https://raw.githubusercontent.com/JKaram/actor-ages/master/public/readme/gif_example.gif)
+![How To Use](https://github.com/JKaram/actor-ages/blob/master/public/readme/gif_ver2.gif)
 
 ## Tech/framework used
 
