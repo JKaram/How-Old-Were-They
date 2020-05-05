@@ -29,13 +29,18 @@ function App() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(
-    "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
+    <>
+      Hello!
+      <br />
+      Please search for an actor and find out how old they were when they filmed
+      thier movies.
+    </>
   );
 
   const search = async (text) => {
     if (text === "") return setResults([]);
     setLoading(true);
-    setMessage("1 sec");
+    setMessage("Searching ...");
     const res = await axios(
       `https://api.themoviedb.org/3/search/person?api_key=${process.env.REACT_APP_API_KEY}&search_type=ngram&language=en-US&query=${text}&page=1&include_adult=false&append_to_response=id`
     );
@@ -51,7 +56,7 @@ function App() {
       setLoading(false);
       results.length
         ? setMessage(
-            "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
+            "Hello!  \n Please search for an actor and find out how old they were when they filmed thier movies."
           )
         : setMessage("Hmm No Results");
     }, 2000);

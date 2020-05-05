@@ -20,6 +20,9 @@ const Information = styled.div`
   font-size: 1em;
   margin: 2px auto;
   color: #eeeeee;
+  .rose {
+    margin-left: 5px;
+  }
 `;
 
 export function Info({ name, age, deathday }) {
@@ -27,7 +30,16 @@ export function Info({ name, age, deathday }) {
     <Footer>
       <Information className="name">{name}</Information>
       <Information>
-        {deathday ? `${age} years old (Deceased)` : `${age} years old`}
+        {deathday ? (
+          <>
+            {age} years old (Deceased)
+            <span role="img" aria-label="Rose" className="rose">
+              🌹
+            </span>
+          </>
+        ) : (
+          `${age} years old`
+        )}
       </Information>
     </Footer>
   );

@@ -4,8 +4,8 @@ const Message = styled.div`
   width: 60%;
   margin: 3% auto 20px;
   border: 4px solid ${(p) => p.theme.comment};
-  padding: 20px;
-  text-align: center;
+  padding: 20px 40px;
+  text-align: left;
   font-weight: 900;
   color: ${(p) => p.theme.white};
   font-family: arial;
