@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import axios from "axios";
 import debounce from "lodash/debounce";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
@@ -62,7 +62,7 @@ function App() {
     }, 2000);
   };
 
-  const debouncedSearch = debounce(search, 1000);
+  const debouncedSearch = useCallback(debounce(search, 1000), [search]);
 
   return (
     <ThemeProvider theme={DefaultTheme}>
