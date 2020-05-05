@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import debounce from "lodash/debounce";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
@@ -33,7 +33,7 @@ function App() {
       Hello!
       <br />
       Please search for an actor and find out how old they were when they filmed
-      thier movies.
+      their movies.
     </>
   );
 
@@ -56,13 +56,13 @@ function App() {
       setLoading(false);
       results.length
         ? setMessage(
-            "Hello!  \n Please search for an actor and find out how old they were when they filmed thier movies."
+            "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
           )
         : setMessage("Hmm No Results");
     }, 2000);
   };
 
-  const debouncedSearch = useCallback(debounce(search, 1000), [search]);
+  const debouncedSearch = useRef(debounce((text) => search(text), 500)).current;
 
   return (
     <ThemeProvider theme={DefaultTheme}>
