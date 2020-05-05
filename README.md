@@ -1,4 +1,4 @@
-## Actor Ages
+## Actor Ages 2.0
 
 ### https://howoldwerethey.netlify.app/
 
@@ -8,7 +8,7 @@ Actor Ages lets a user search for an actor and find out how they were while film
 
 ## Why is this useful?
 
-That is a great question! This is my first project post graduation. I wanted more practice with React, APIs and styling. I find myself looking up this information manually and thought at least **one** other person might use it.
+This is my first project post graduation. I wanted more practice with React, APIs and styling. I find myself looking up this information manually and thought at least **one** other person might use it.
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/JKaram/actor-ages)
 
