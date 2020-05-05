@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Header, SearchBox } from "./index";
+import { Header } from "./index";
 
 const Content = styled.main`
   max-width: 800px;
@@ -10,24 +10,10 @@ const Content = styled.main`
   font-family: "Open Sans";
 `;
 
-export function PageLayout({
-  children,
-  text,
-  setText,
-  debouncedSearch,
-  setResults,
-  setMessage,
-}) {
+export function PageLayout({ children }) {
   return (
     <>
       <Header />
-      <SearchBox
-        text={text}
-        setText={setText}
-        debouncedSearch={debouncedSearch}
-        setResults={setResults}
-        setMessage={setMessage}
-      />
       <Content>{children}</Content>
     </>
   );

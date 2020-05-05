@@ -33,13 +33,7 @@ const ClearButton = styled.button`
   font-weight: bold;
 `;
 
-export function SearchBox({
-  text,
-  setText,
-  debouncedSearch,
-  setResults,
-  setMessage,
-}) {
+export function SearchBox({ text, debouncedSearch, updateText, clearResults }) {
   return (
     <SearchBoxWrapper>
       <SearchInput
@@ -49,17 +43,14 @@ export function SearchBox({
         maxLength="50"
         placeholder="Enter Actor Name"
         onChange={(event) => {
-          setText(event.target.value);
+          updateText(event.target.value);
           debouncedSearch(event.target.value);
         }}
       />
       <ClearButton
         onClick={() => {
-          setResults([]);
-          setText("");
-          setMessage(
-            "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
-          );
+          clearResults();
+          updateText("");
         }}
         disabled={!text}
       >
@@ -68,3 +59,9 @@ export function SearchBox({
     </SearchBoxWrapper>
   );
 }
+
+// const updateText = (text) => {
+//   setState((prevState) => ({ ...prevState, text }));
+// };
+
+// const clearResults
