@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import debounce from "lodash/debounce";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import DefaultTheme from "themes/default";
 
 import { RandomFace } from "utils/index";
 
@@ -30,31 +31,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = {
-  primaryColor: "#f8049c",
-  secondaryColor: "#fdd54f",
-  background: "#282a36",
-  header: "#383A59",
-  green: "#50fa7b",
-  purple: "#bd93f9",
-  pink: "#ff79c6",
-  orange: "#ffb86c",
-  red: "#ff5555",
-  yellow: "#f1fa8c",
-  cyan: "#8be9fd",
-  currentLine: "#44475a	",
-  selection: "#44475a",
-  forground: "#f8f8f2",
-  comment: "#6272a4",
-};
-
 function App() {
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(
     "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
   );
-  const [loading, setLoading] = useState(false);
 
   const search = async (text) => {
     if (text === "") return setResults([]);
@@ -96,10 +79,8 @@ function App() {
 
   const debouncedSearch = debounce(search, 1000);
 
-  console.log(results.length);
-
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={DefaultTheme}>
       <GlobalStyle />
       <PageLayout>
         <SearchBox
