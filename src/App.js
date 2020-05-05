@@ -52,7 +52,7 @@ function App() {
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
   const [message, setMessage] = useState(
-    "Hello! Please search for an actor and find out how they were when they filmed thier movies."
+    "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
   );
   const [loading, setLoading] = useState(false);
 
@@ -75,7 +75,7 @@ function App() {
       setLoading(false);
       results.length
         ? setMessage(
-            "Hello!, Please search for an actor and find out how they were when they filmed thier movies!"
+            "Hello! Please search for an actor and find out how old they were when they filmed thier movies."
           )
         : setMessage("Hmm No Results");
     }, 2000);
