@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Message = styled.div`
+export const Message = styled.div`
   width: 60%;
   margin: 3% auto 20px;
   border: 4px solid ${(p) => p.theme.comment};
@@ -37,5 +37,3 @@ const Message = styled.div`
     bottom: -18px;
   }
 `;
-
-export { Message };

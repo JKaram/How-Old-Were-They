@@ -25,18 +25,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  // const [text, setText] = useState("");
-  // const [results, setResults] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const [message, setMessage] = useState(
-  //   <>
-  //     Hello!
-  //     <br />
-  //     Please search for an actor and find out how old they were when they filmed
-  //     their movies.
-  //   </>
-  // );
-
   const [state, setState] = useState({
     text: "",
     results: [],
@@ -58,8 +46,6 @@ function App() {
       loading: true,
       message: "Searching",
     }));
-
-    // setMessage("Searching ...");
 
     const actors = await getActors(text);
     setState((prevState) => ({
