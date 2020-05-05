@@ -9,6 +9,7 @@ const Message = styled.div`
   font-weight: 900;
   color: #00bfb6;
   font-family: arial;
+  border-radius: 100px;
   position: relative;
 
   &:before {
