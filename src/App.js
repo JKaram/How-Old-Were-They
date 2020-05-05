@@ -56,6 +56,7 @@ function App() {
         : setMessage("Hmm No Results");
     }, 2000);
   };
+
   const debouncedSearch = debounce(search, 1000);
 
   return (
