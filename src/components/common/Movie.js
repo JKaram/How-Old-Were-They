@@ -1,9 +1,9 @@
 import React from "react";
 import Img from "react-image";
 import styled from "styled-components";
-import moment from "moment";
 
 import { Info } from "./index";
+import { calculateMovieAgeDiff } from "utils/index";
 import loading from "images/loading-png-gif.gif";
 
 const Wrapper = styled.div`
@@ -30,7 +30,7 @@ export function Movie({ title, release_date, poster_path, actorBirthday }) {
       />
       <Info
         name={title}
-        age={moment(release_date).diff(actorBirthday, "years")}
+        age={calculateMovieAgeDiff(actorBirthday, release_date)}
       />
     </Wrapper>
   );

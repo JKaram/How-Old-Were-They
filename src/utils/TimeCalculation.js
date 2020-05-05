@@ -5,4 +5,8 @@ function calculateAge(age, deathDay) {
   return moment().diff(age, "years");
 }
 
-export { calculateAge };
+function calculateMovieAgeDiff(actorBirthday, releaseDate) {
+  return moment(releaseDate).diff(actorBirthday, "years");
+}
+
+export { calculateAge, calculateMovieAgeDiff };
