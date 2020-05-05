@@ -10,3 +10,4 @@ export * from "./PageLayout";
 export * from "./Loading";
 export * from "./Header";
 export * from "./Message";
+export * from "./SearchResults";

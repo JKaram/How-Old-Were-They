@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SearchBoxWrapper = styled.div`
   display: flex;
   width: 100%;
-  margin: 0 auto;
+  margin: 30px auto;
   justify-content: center;
 `;
 
