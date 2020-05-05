@@ -22,11 +22,13 @@ const Information = styled.div`
   color: #eeeeee;
 `;
 
-export function Info({ name, age }) {
+export function Info({ name, age, deathday }) {
   return (
     <Footer>
       <Information className="name">{name}</Information>
-      <Information>{age} years old</Information>
+      <Information>
+        {deathday ? `${age} years old (Deceased)` : `${age} years old`}
+      </Information>
     </Footer>
   );
 }

@@ -20,7 +20,6 @@ export function ActorProfile({ name, img, list, id, getActorInfo }) {
       getActorInfo(id).then((val) => setActorInfo(val));
     }
   }, [id, getActorInfo]);
-
   return (
     <Wrapper>
       <Actor
@@ -30,7 +29,7 @@ export function ActorProfile({ name, img, list, id, getActorInfo }) {
         onClick={() => {
           setShowList(true);
         }}
-        actorBirthday={actorInfo.birthday}
+        actorInfo={actorInfo}
       />
 
       {showList && (

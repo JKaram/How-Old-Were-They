@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import moment from "moment";
 import { Info } from "./index";
+import { calculateAge } from "utils/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,18 +16,23 @@ const Wrapper = styled.div`
     border: 5px solid ${(p) => p.theme.comment};
   }
   cursor: pointer;
-
-  > img {
-    height: 300px;
-    width: auto;
-  }
 `;
 
-export function Actor({ name, img, onClick, actorBirthday }) {
+const ActorImage = styled.img`
+  height: 300px;
+  width: auto;
+  ${(p) => (p.deathday ? "filter: grayscale(100%)" : null)}
+`;
+
+export function Actor({ name, img, onClick, actorInfo }) {
   return (
     <Wrapper onClick={onClick}>
-      <img src={img} alt={name} />
-      <Info name={name} age={moment().diff(actorBirthday, "years")} />
+      <ActorImage src={img} alt={name} deathday={actorInfo.deathday} />
+      <Info
+        name={name}
+        age={calculateAge(actorInfo.birthday, actorInfo.deathday)}
+        deathday={actorInfo.deathday}
+      />
     </Wrapper>
   );
 }
