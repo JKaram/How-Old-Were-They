@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const Message = styled.div`
   width: 60%;
-  margin: 3% auto 20px;
+  margin: 7% auto 20px;
   border: 4px solid ${(p) => p.theme.comment};
   padding: 20px 40px;
   text-align: left;
   font-weight: 900;
   color: ${(p) => p.theme.white};
-  font-family: arial;
   border-radius: 100px;
   position: relative;
 

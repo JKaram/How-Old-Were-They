@@ -12,6 +12,7 @@ import {
   Message,
   SearchBox,
   SearchResults,
+  Modal,
 } from "components/common/index";
 
 const GlobalStyle = createGlobalStyle`
@@ -31,6 +32,7 @@ function App() {
     loading: false,
     message: "Hey",
   });
+  const [toggle, setToggle] = useState(false);
 
   const { text, results, loading, message } = state;
 
@@ -85,6 +87,11 @@ function App() {
           debouncedSearch={debouncedSearch}
           clearResults={clearResults}
         />
+        {toggle && (
+          <Modal toggle={toggle} setToggle={setToggle}>
+            <p>asdasd</p>
+          </Modal>
+        )}
         {!loading && !results.length ? (
           <>
             <Message>{message}</Message>

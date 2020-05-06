@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SearchBoxWrapper = styled.div`
   display: flex;
   width: 95%;
-  margin: 30px auto;
+  margin: 5% auto;
   justify-content: center;
 `;
 
@@ -59,9 +59,3 @@ export function SearchBox({ text, debouncedSearch, updateText, clearResults }) {
     </SearchBoxWrapper>
   );
 }
-
-// const updateText = (text) => {
-//   setState((prevState) => ({ ...prevState, text }));
-// };
-
-// const clearResults

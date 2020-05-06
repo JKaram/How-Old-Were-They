@@ -7,7 +7,7 @@ const Wrapper = styled.header`
   margin: 0;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px;
   border-bottom: 6px solid ${(p) => p.theme.comment};
   background: rgb(56, 58, 89);
 `;
