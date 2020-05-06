@@ -7,7 +7,6 @@ const Content = styled.main`
   margin: 30px auto 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
-  font-family: "Open Sans";
 `;
 
 export function PageLayout({ children }) {

@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     background: ${(p) => p.theme.background};
     min-height: 100vh;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;;
     color: white;
   }
 `;
