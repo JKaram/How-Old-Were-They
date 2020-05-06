@@ -19,6 +19,7 @@ export const getActors = async (text) => {
   );
   const actors = await res.data.results.filter(
     (actor) =>
+      // actor.birthday !== undefined &&
       actor.known_for_department === "Acting" &&
       actor.popularity > 1 &&
       actor.profile_path

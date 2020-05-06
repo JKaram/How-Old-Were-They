@@ -1,7 +1,5 @@
 import React from "react";
-import { Modal } from "./index";
-
-import { Movie } from "./index";
+import { Modal, Movie } from "./index";
 
 export function MovieList({ list, actorBirthday, showList, toggleModal }) {
   list = list
@@ -17,6 +15,7 @@ export function MovieList({ list, actorBirthday, showList, toggleModal }) {
         ? -1
         : 0
     );
+  console.log(list);
 
   return (
     <Modal isOpen={showList} toggleModal={toggleModal} ariaHideApp={false}>
@@ -28,6 +27,7 @@ export function MovieList({ list, actorBirthday, showList, toggleModal }) {
             poster_path={movie.poster_path}
             release_date={movie.release_date}
             actorBirthday={actorBirthday}
+            // Info={asd}
           />
         );
       })}
