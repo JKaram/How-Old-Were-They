@@ -1,12 +1,18 @@
 import moment from "moment";
 
-function calculateAge(age, deathDay) {
+export function calculateAge(age, deathDay) {
   if (deathDay) return moment(deathDay).diff(age, "years");
   return moment().diff(age, "years");
 }
 
-function calculateMovieAgeDiff(actorBirthday, releaseDate) {
+export function calculateMovieAgeDiff(actorBirthday, releaseDate) {
   return moment(releaseDate).diff(actorBirthday, "years");
 }
 
-export { calculateAge, calculateMovieAgeDiff };
+export const convertDate = (date) => {
+  return moment(date, "YYYY-MM-DD").format("LL");
+};
+
+export const getYear = (date) => {
+  return moment(date, "YYYY-MM-DD").format("YYYY");
+};

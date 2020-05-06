@@ -19,6 +19,7 @@ const Footer = styled.footer`
 const Information = styled.div`
   font-size: 1em;
   margin: 2px auto;
+  text-align: center;
   color: #eeeeee;
   .rose {
     margin-left: 5px;
