@@ -14,18 +14,20 @@ const ModalWrapper = styled.div`
   align-items: center;
 `;
 const ModalCard = styled.div`
-  margin-top: 100px;
   position: relative;
-  height: 100%;
-  min-width: 320px;
+  height: 80%;
+  max-width: 600px;
+  width: 100%;
   z-index: 10;
-  margin-bottom: 100px;
-  background: ${(p) => p.theme.yellow};
+  background: ${(p) => p.theme.background};
+  border: 5px solid ${(p) => p.theme.yellow};
   border-radius: 5px;
   padding: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   color: #000;
   overflow: scroll;
+  opacity: ${(p) => (p.isOpen ? "1" : "0")};
+  transition: all 5s;
 `;
 const CloseButton = styled.button`
   position: absolute;
@@ -65,7 +67,7 @@ export const Modal = ({ children, toggleModal, isOpen }) => {
   return (
     <Portal>
       <ModalWrapper>
-        <ModalCard>
+        <ModalCard isOpen>
           <CloseButton onClick={() => toggleModal(!isOpen)}>
             <img src="https:icon.now.sh/x/ff0000" alt="close" />
           </CloseButton>

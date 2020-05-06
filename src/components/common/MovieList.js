@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal } from "./index";
 
-import { Movie, Button } from "./index";
+import { Movie } from "./index";
 
 export function MovieList({ list, actorBirthday, showList, toggleModal }) {
   list = list

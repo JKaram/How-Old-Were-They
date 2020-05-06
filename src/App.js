@@ -12,7 +12,6 @@ import {
   Message,
   SearchBox,
   SearchResults,
-  Modal,
 } from "components/common/index";
 
 const GlobalStyle = createGlobalStyle`
@@ -32,7 +31,6 @@ function App() {
     loading: false,
     message: "Hey",
   });
-  const [toggle, setToggle] = useState(false);
 
   const { text, results, loading, message } = state;
 
