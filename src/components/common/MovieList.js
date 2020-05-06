@@ -15,7 +15,6 @@ export function MovieList({ list, actorBirthday, showList, toggleModal }) {
         ? -1
         : 0
     );
-  console.log(list);
 
   return (
     <Modal isOpen={showList} toggleModal={toggleModal} ariaHideApp={false}>

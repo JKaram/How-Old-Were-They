@@ -13,9 +13,14 @@ const Wrapper = styled.div`
   border: 5px solid ${(p) => p.theme.header};
   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    border: 5px solid ${(p) => p.theme.comment};
-    transform: scale(1.1);
+  /* &:hover {
+  } */
+
+  @media (hover: hover) {
+    &:hover {
+      border: 5px solid ${(p) => p.theme.comment};
+      transform: scale(1.1);
+    }
   }
   cursor: pointer;
 `;

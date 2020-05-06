@@ -29,7 +29,6 @@ const Img = styled.img`
   height: 300px;
   width: 200px;
   z-index: 1;
-  /* position: absolute; */
 `;
 
 const MoreInfo = styled.div`
@@ -50,7 +49,6 @@ export function Movie({ title, release_date, poster_path, actorBirthday }) {
       <ImageWrapper onClick={() => setToggleInfo(!toggleInfo)}>
         <Img
           src={`https://image.tmdb.org/t/p/original${poster_path}`}
-          // loader={<Loading src={loading} height="300px" width="200px" />}
           alt={title}
           height="300px"
           width="200px"
