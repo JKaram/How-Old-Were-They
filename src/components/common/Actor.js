@@ -16,12 +16,12 @@ const Wrapper = styled.div`
   /* &:hover {
   } */
 
-  @media (hover: hover) {
+  /* @media (hover: hover) {
     &:hover {
       border: 5px solid ${(p) => p.theme.comment};
       transform: scale(1.1);
     }
-  }
+  } */
   cursor: pointer;
 `;
 
