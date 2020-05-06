@@ -14,15 +14,18 @@ const ModalWrapper = styled.div`
   align-items: center;
 `;
 const ModalCard = styled.div`
+  margin-top: 100px;
   position: relative;
+  height: 100%;
   min-width: 320px;
   z-index: 10;
   margin-bottom: 100px;
-  background: white;
+  background: ${(p) => p.theme.yellow};
   border-radius: 5px;
   padding: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   color: #000;
+  overflow: scroll;
 `;
 const CloseButton = styled.button`
   position: absolute;
@@ -58,17 +61,18 @@ const Portal = ({ children }) => {
   return createPortal(children, el);
 };
 
-export const Modal = ({ children, setToggle, toggle }) => (
-  <Portal>
-    <ModalWrapper>
-      <ModalCard>
-        <CloseButton onClick={() => setToggle(!toggle)}>
-          <img src="https:icon.now.sh/x/ff0000" alt="close" />
-        </CloseButton>
-        {children}
-      </ModalCard>
-      <Background />
-      {/* onClick={toggle} */}
-    </ModalWrapper>
-  </Portal>
-);
+export const Modal = ({ children, toggleModal, isOpen }) => {
+  return (
+    <Portal>
+      <ModalWrapper>
+        <ModalCard>
+          <CloseButton onClick={() => toggleModal(!isOpen)}>
+            <img src="https:icon.now.sh/x/ff0000" alt="close" />
+          </CloseButton>
+          {children}
+        </ModalCard>
+        <Background onClick={() => toggleModal(!isOpen)} />
+      </ModalWrapper>
+    </Portal>
+  );
+};

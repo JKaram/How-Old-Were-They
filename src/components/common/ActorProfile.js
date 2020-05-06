@@ -34,7 +34,7 @@ export function ActorProfile({ name, img, list, id, getActorInfo }) {
 
       {showList && (
         <MovieList
-          showList
+          showList={showList}
           toggleModal={toggleModal}
           list={actorInfo.credits.cast}
           actorBirthday={actorInfo.birthday}

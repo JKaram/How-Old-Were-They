@@ -87,11 +87,7 @@ function App() {
           debouncedSearch={debouncedSearch}
           clearResults={clearResults}
         />
-        {toggle && (
-          <Modal toggle={toggle} setToggle={setToggle}>
-            <p>asdasd</p>
-          </Modal>
-        )}
+
         {!loading && !results.length ? (
           <>
             <Message>{message}</Message>

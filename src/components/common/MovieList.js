@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "react-modal";
+import { Modal } from "./index";
 
 import { Movie, Button } from "./index";
 
@@ -19,8 +19,7 @@ export function MovieList({ list, actorBirthday, showList, toggleModal }) {
     );
 
   return (
-    <Modal isOpen={showList} ariaHideApp={false}>
-      <Button toggleModal={toggleModal} />
+    <Modal isOpen={showList} toggleModal={toggleModal} ariaHideApp={false}>
       {list.map((movie) => {
         return (
           <Movie
