@@ -15,6 +15,9 @@ const ModalWrapper = styled.div`
 `;
 const ModalCard = styled.div`
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   height: 80%;
   max-width: 600px;
   width: 100%;
@@ -25,7 +28,7 @@ const ModalCard = styled.div`
   padding: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   color: #000;
-  overflow: scroll;
+  overflow: auto;
   opacity: ${(p) => (p.isOpen ? "1" : "0")};
   transition: all 5s;
 `;

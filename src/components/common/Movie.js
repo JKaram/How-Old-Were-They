@@ -8,14 +8,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 5px auto;
-  border: 2px solid ${(p) => p.theme.header};
+  border: 4px solid ${(p) => p.theme.header};
   max-width: 200px;
   width: 100%;
   position: relative;
   z-index: 0;
+  background: ${(p) => p.theme.header};
 
   &:hover {
-    border: 2px solid ${(p) => p.theme.comment};
+    border: 4px solid ${(p) => p.theme.comment};
   }
 `;
 
@@ -54,7 +55,7 @@ export function Movie({ title, release_date, poster_path, actorBirthday }) {
           width="200px"
           onClick={() => setToggleInfo(!toggleInfo)}
         />
-        {toggleInfo && <MoreInfo>{releaseDate}</MoreInfo>}
+        {/* {toggleInfo && <MoreInfo>{releaseDate}</MoreInfo>} */}
       </ImageWrapper>
       <Info
         name={`${title} (${releaseYear})`}
