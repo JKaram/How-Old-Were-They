@@ -23,7 +23,7 @@ const ModalCard = styled.div`
   width: 100%;
   z-index: 10;
   background: ${(p) => p.theme.background};
-  border: 5px solid ${(p) => p.theme.yellow};
+  border: 5px solid ${(p) => p.theme.pink};
   border-radius: 5px;
   padding: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);

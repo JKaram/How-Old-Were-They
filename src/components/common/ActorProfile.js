@@ -20,6 +20,15 @@ export function ActorProfile({ name, img, list, id, getActorInfo }) {
       getActorInfo(id).then((val) => setActorInfo(val));
     }
   }, [id, getActorInfo]);
+
+  useEffect(() => {
+    if (showList) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [showList]);
+
   return (
     <Wrapper>
       <Actor

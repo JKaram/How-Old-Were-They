@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Info } from "./index";
-import { calculateMovieAgeDiff, convertDate, getYear } from "utils/index";
+import { calculateMovieAgeDiff, getYear } from "utils/index";
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   position: relative;
   z-index: 0;
   background: ${(p) => p.theme.header};
+  height: fit-content;
 
   &:hover {
     border: 4px solid ${(p) => p.theme.comment};
@@ -32,18 +33,18 @@ const Img = styled.img`
   z-index: 1;
 `;
 
-const MoreInfo = styled.div`
-  height: 300px;
-  width: 200px;
-  z-index: 2;
-  position: absolute;
-  top: 0px;
-  color: white;
-`;
+// const MoreInfo = styled.div`
+//   height: 300px;
+//   width: 200px;
+//   z-index: 2;
+//   position: absolute;
+//   top: 0px;
+//   color: white;
+// `;
 
 export function Movie({ title, release_date, poster_path, actorBirthday }) {
   const [toggleInfo, setToggleInfo] = useState(false);
-  const releaseDate = convertDate(release_date);
+  // const releaseDate = convertDate(release_date);
   const releaseYear = getYear(release_date);
   return (
     <Wrapper>
