@@ -30,7 +30,7 @@ function App() {
     text: "",
     results: [],
     loading: false,
-    message: messages.inital,
+    message: messages.initial,
   });
 
   const { text, results, loading, message } = state;
@@ -72,10 +72,15 @@ function App() {
   };
 
   const clearResults = () => {
-    setState((prevState) => ({ ...prevState, results: [] }));
+    setState((prevState) => ({
+      ...prevState,
+      results: [],
+      message: messages.tryAgain,
+    }));
   };
 
   useEffect(() => {
+    if (state.message === messages.initial) return;
     if (loading)
       return setState((prevState) => ({
         ...prevState,
@@ -86,7 +91,7 @@ function App() {
         ...prevState,
         message: messages.noResults,
       }));
-  }, [loading, state.results.length]);
+  }, [loading, state.message, state.message.initial, state.results.length]);
 
   return (
     <ThemeProvider theme={DefaultTheme}>
