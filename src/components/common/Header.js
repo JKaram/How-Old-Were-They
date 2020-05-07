@@ -22,7 +22,7 @@ const Wrapper = styled.header`
   }
 
   .logo {
-    height: 50px;
+    height: 40px;
     margin: 0 3px;
     @media (max-width: 670px) {
       height: 30px;

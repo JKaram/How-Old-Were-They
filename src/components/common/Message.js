@@ -5,7 +5,7 @@ export const Message = styled.div`
   margin: 7% auto 20px;
   border: 4px solid ${(p) => p.theme.comment};
   padding: 20px 40px;
-  text-align: left;
+  text-align: center;
   font-weight: 900;
   color: ${(p) => p.theme.white};
   border-radius: 100px;

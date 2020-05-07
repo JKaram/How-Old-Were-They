@@ -12,7 +12,7 @@ const SearchInput = styled.input`
   max-width: 500px;
   width: 100%;
   border-radius: 3px;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   box-sizing: border-box;
   height: 3rem;
   border: 1px solid #ccc;
