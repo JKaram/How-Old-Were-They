@@ -1,7 +1,5 @@
 import React from "react";
 import { Modal, Movie } from "./index";
-import { CSSTransition } from "react-transition-group";
-import "./transition.css";
 
 export function MovieList({ list, actorBirthday, showList, toggleModal }) {
   list = list
@@ -19,23 +17,19 @@ export function MovieList({ list, actorBirthday, showList, toggleModal }) {
     );
 
   return (
-    <>
-      <CSSTransition in={showList} timeout={300} className="transition">
-        <Modal isOpen={showList} toggleModal={toggleModal} ariaHideApp={false}>
-          {list.map((movie) => {
-            return (
-              <Movie
-                key={movie.id}
-                title={movie.title}
-                poster_path={movie.poster_path}
-                release_date={movie.release_date}
-                actorBirthday={actorBirthday}
-                // Info={asd}
-              />
-            );
-          })}
-        </Modal>
-      </CSSTransition>
-    </>
+    <Modal isOpen={showList} toggleModal={toggleModal} ariaHideApp={false}>
+      {list.map((movie) => {
+        return (
+          <Movie
+            key={movie.id}
+            title={movie.title}
+            poster_path={movie.poster_path}
+            release_date={movie.release_date}
+            actorBirthday={actorBirthday}
+            // Info={asd}
+          />
+        );
+      })}
+    </Modal>
   );
 }
