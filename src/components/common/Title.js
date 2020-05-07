@@ -37,7 +37,7 @@ const Title = styled.h1`
 
 const Logo = styled.img`
   margin-left: 15px;
-  height: 2.5em;
+  height: 3.5em;
   fill: ${(p) => p.theme.yellow};
 `;
 
