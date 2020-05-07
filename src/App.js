@@ -91,7 +91,8 @@ function App() {
         ...prevState,
         message: messages.noResults,
       }));
-  }, [loading, state.message, state.message.initial, state.results.length]);
+    // eslint-disable-line no-console
+  }, [loading, state.message, state.results.length]);
 
   return (
     <ThemeProvider theme={DefaultTheme}>

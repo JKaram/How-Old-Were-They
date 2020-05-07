@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "components/common";
+import { Headline } from "components/common";
 import github from "images/github-logo.png";
 import insta from "images/insta-logo.png";
 
@@ -11,13 +11,17 @@ const Wrapper = styled.header`
   padding: 20px;
   border-bottom: 6px solid ${(p) => p.theme.comment};
   background: rgb(56, 58, 89);
+
+  @media (max-width: 738px) {
+    flex-direction: column;
+  }
 `;
 
 export function Header() {
   return (
     <Wrapper>
       <div></div>
-      <Title>How Old Were They?</Title>
+      <Headline />
       <div className="links">
         <a
           href="https://github.com/JKaram/actor-ages"

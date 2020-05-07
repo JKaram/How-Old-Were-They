@@ -22,12 +22,12 @@ const ModalCard = styled.div`
   justify-content: space-around;
   height: 80%;
   max-width: 600px;
-  width: 100%;
+  width: 90%;
   z-index: 10;
   background: ${(p) => p.theme.background};
   border: 5px solid ${(p) => p.theme.pink};
   padding: 15px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   overflow: auto;
 `;
 const CloseButton = styled.button`
