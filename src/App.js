@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import debounce from "lodash/debounce";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import DefaultTheme from "themes/default";
+import { messages } from "messages";
 
 import { getActors, RandomFace } from "utils/index";
 
@@ -29,7 +30,7 @@ function App() {
     text: "",
     results: [],
     loading: false,
-    message: "Hey",
+    message: messages.inital,
   });
 
   const { text, results, loading, message } = state;
@@ -57,7 +58,6 @@ function App() {
       setState((prevState) => ({
         ...prevState,
         loading: false,
-        message: "Done",
       }));
     }, 2000);
   };
@@ -74,6 +74,19 @@ function App() {
   const clearResults = () => {
     setState((prevState) => ({ ...prevState, results: [] }));
   };
+
+  useEffect(() => {
+    if (loading)
+      return setState((prevState) => ({
+        ...prevState,
+        message: messages.loading,
+      }));
+    if (!loading && state.results.length === 0)
+      return setState((prevState) => ({
+        ...prevState,
+        message: messages.noResults,
+      }));
+  }, [loading, state.results.length]);
 
   return (
     <ThemeProvider theme={DefaultTheme}>
