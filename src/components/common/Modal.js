@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
+import "./transition.css";
 import closeIcon from "images/clear-24px.svg";
 
 const ModalWrapper = styled.div`
@@ -25,13 +26,9 @@ const ModalCard = styled.div`
   z-index: 10;
   background: ${(p) => p.theme.background};
   border: 5px solid ${(p) => p.theme.pink};
-  border-radius: 5px;
   padding: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  color: #000;
   overflow: auto;
-  opacity: ${(p) => (p.isOpen ? "1" : "0")};
-  transition: all 5s;
 `;
 const CloseButton = styled.button`
   position: absolute;
@@ -71,12 +68,13 @@ export const Modal = ({ children, toggleModal, isOpen }) => {
   return (
     <Portal>
       <ModalWrapper>
-        <ModalCard isOpen>
+        <ModalCard>
           <CloseButton onClick={() => toggleModal(!isOpen)}>
             <img src={closeIcon} alt="close" />
           </CloseButton>
           {children}
         </ModalCard>
+
         <Background onClick={() => toggleModal(!isOpen)} />
       </ModalWrapper>
     </Portal>

@@ -28,7 +28,7 @@ export function ActorProfile({ name, img, list, id, getActorInfo }) {
       document.body.style.overflow = "auto";
     }
   }, [showList]);
-
+  console.log(showList);
   return (
     <Wrapper>
       <Actor

@@ -11,9 +11,6 @@ const Wrapper = styled.header`
   padding: 20px;
   border-bottom: 6px solid ${(p) => p.theme.comment};
   background: rgb(56, 58, 89);
-
-  .links a {
-  }
 `;
 
 export function Header() {
