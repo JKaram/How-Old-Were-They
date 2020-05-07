@@ -12,30 +12,47 @@ const Wrapper = styled.header`
   border-bottom: 6px solid ${(p) => p.theme.comment};
   background: rgb(56, 58, 89);
 
-  @media (max-width: 738px) {
-    flex-direction: column;
+  .div {
+    flex: 1;
+  }
+
+  .links {
+    text-align: right;
+  }
+
+  .logo {
+    height: 50px;
+    @media (max-width: 670px) {
+      height: 30px;
+    }
+  }
+
+  .empty {
+    @media (max-width: 670px) {
+      display: none;
+    }
   }
 `;
 
 export function Header() {
   return (
     <Wrapper>
-      <div></div>
+      <div className="empty div"></div>
       <Headline />
-      <div className="links">
+      <div className="links div">
         <a
           href="https://github.com/JKaram/actor-ages"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={github} alt="github logo" height="50px" />
+          <img src={github} alt="github logo" className="logo" />
         </a>
         <a
           href="https://www.instagram.com/jamie_karam/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={insta} alt="instagram logo" height="50px" />
+          <img src={insta} alt="instagram logo" className="logo" />
         </a>
       </div>
     </Wrapper>

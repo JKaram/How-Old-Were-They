@@ -51,16 +51,15 @@ const Background = styled.div`
   opacity: 0.5;
 `;
 
+const modalRoot = document.getElementById("modal");
 const Portal = ({ children }) => {
-  const modalRoot = document.getElementById("modal");
   const el = document.createElement("div");
 
   useEffect(() => {
     modalRoot.appendChild(el);
-  }, [el, modalRoot]);
-  useEffect(() => {
     return () => modalRoot.removeChild(el);
-  });
+  }, [el]);
+
   return createPortal(children, el);
 };
 
