@@ -8,6 +8,7 @@ const Wrapper = styled.header`
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   border-bottom: 6px solid ${(p) => p.theme.comment};
   background: rgb(56, 58, 89);
@@ -22,6 +23,7 @@ const Wrapper = styled.header`
 
   .logo {
     height: 50px;
+    margin: 0 3px;
     @media (max-width: 670px) {
       height: 30px;
     }
