@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
+import closeIcon from "images/clear-24px.svg";
 
 const ModalWrapper = styled.div`
   position: fixed;
@@ -72,7 +73,7 @@ export const Modal = ({ children, toggleModal, isOpen }) => {
       <ModalWrapper>
         <ModalCard isOpen>
           <CloseButton onClick={() => toggleModal(!isOpen)}>
-            <img src="https:icon.now.sh/x/ff0000" alt="close" />
+            <img src={closeIcon} alt="close" />
           </CloseButton>
           {children}
         </ModalCard>
