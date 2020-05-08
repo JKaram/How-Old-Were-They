@@ -8,28 +8,21 @@ Actor Ages lets a user search for an actor and find out how they were while film
 
 ## Why is this useful?
 
-This is my first project post graduation. I wanted more practice with React, APIs and styling. I find myself looking up this information manually and thought at least **one** other person might use it.
+I find myself looking up this information manually and hope at least **one** other person might use it.
+
+This is my first project post graduation. I wanted to test myself with a react project built entirely from scratch.
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/JKaram/actor-ages)
 
 ## Screenshots
 
-![How To Use](https://github.com/JKaram/actor-ages/blob/master/public/readme/gif_ver2.gif)
-
-## Tech/framework used
-
-<b>Built with</b>
-
-- [React](https://reactjs.org/)
-- [Styled Components](https://styled-components.com)
-- [Lodash](https://lodash.com/)
-- [Moment](https://momentjs.com/)
+![How To Use](https://github.com/JKaram/actor-ages/blob/master/public/readme/gifv3.gif)
 
 ## Features
 
 <b>Search Bar</b>
 
-- Live search for an actor. Using debounce to limit the amount of API calls while searching.
+- **Live** search for an actor. Using debounce to limit the amount of API calls
 
 <b>API Filtering</b>
 
@@ -42,10 +35,8 @@ This is my first project post graduation. I wanted more practice with React, API
 
 ## Still to come
 
-- Animations IE Loading bar while searching, transitions.
+- More Animations
 - More filtering of search for more accurate results.
-- Better styling in general. (Have lots more to learn)
-- Desktop version
 
 ## Installation
 
@@ -56,7 +47,7 @@ Install dependencies.
 ### `.env and Api Key`
 
 Apply for an API key from https://www.themoviedb.org/ .<br />
-Create a .env with this inside `REACT_APP_API_KEY=[*your key here*]`
+Create a .env with this inside `REACT_APP_MOVIEDB_API_KEY=[*your key here*]`
 
 ### `npm start`
 
