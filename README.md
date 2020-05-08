@@ -38,6 +38,17 @@ This is my first project post graduation. I wanted to test myself with a react p
 - More Animations
 - More filtering of search for more accurate results.
 
+
+## Dependencies
+
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1"
+
 ## Installation
 
 ### `npm install`
