@@ -31,17 +31,21 @@ export function Info({ name, age, deathday }) {
     <Footer>
       <Information className="name">{name}</Information>
       <Information>
-        {deathday ? (
-          <>
-            {age} years old (Deceased)
-            <span role="img" aria-label="Rose" className="rose">
-              🌹
-            </span>
-          </>
-        ) : (
-          `${age} years old`
-        )}
+        {deathday ? 
+        (<>
+          {age} years old (Deceased)
+          <span role="img" aria-label="Rose" className="rose">
+            🌹
+          </span>
+        </>)
+         : age ?
+            `${age} years old` : 'Age Not Provided 🥺'}
       </Information>
     </Footer>
   );
 }
+
+
+
+
+

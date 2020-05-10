@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 export function SearchResults({ results }) {
   return (
     <Wrapper>
-      {results.slice(0, 10).map((actor) => {
+      {results.map((actor) => {
         return (
           <ActorProfile
             key={actor.id}

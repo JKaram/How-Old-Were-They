@@ -1,6 +1,7 @@
 import moment from "moment";
 
 export function calculateAge(age, deathDay) {
+  if(!age) return null
   if (deathDay) return moment(deathDay).diff(age, "years");
   return moment().diff(age, "years");
 }
