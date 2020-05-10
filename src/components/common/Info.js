@@ -26,7 +26,7 @@ const Information = styled.div`
   }
 `;
 
-export function Info({ name, age, deathday }) {
+export function Info({ name, age, deathday, isMovieList }) {
   return (
     <Footer>
       <Information className="name">{name}</Information>
@@ -39,7 +39,8 @@ export function Info({ name, age, deathday }) {
           </span>
           </>)
           : age ?
-            `${age} years old` : "Age Not Provided"}
+            `${age} years old` : !isMovieList ? "Age Not Provided" : null
+        }
       </Information>
     </Footer>
   );

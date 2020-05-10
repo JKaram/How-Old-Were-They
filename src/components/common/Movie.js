@@ -61,6 +61,7 @@ export function Movie({ title, release_date, poster_path, actorBirthday }) {
       <Info
         name={`${title} (${releaseYear})`}
         age={calculateMovieAgeDiff(actorBirthday, release_date)}
+        isMovieList={true}
       />
     </Wrapper>
   );

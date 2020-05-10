@@ -59,7 +59,7 @@ function App() {
         ...prevState,
         loading: false,
       }));
-    }, 2000);
+    }, 2100);
   };
 
   const debouncedSearch = useCallback(

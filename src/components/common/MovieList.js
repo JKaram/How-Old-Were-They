@@ -26,7 +26,7 @@ export function MovieList({ list, actorBirthday, showList, toggleModal }) {
             poster_path={movie.poster_path}
             release_date={movie.release_date}
             actorBirthday={actorBirthday}
-            // Info={asd}
+            
           />
         );
       })}
