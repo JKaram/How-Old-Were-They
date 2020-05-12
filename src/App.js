@@ -35,6 +35,8 @@ function App() {
 
   const { text, results, loading, message } = state;
 
+  const [clear, setClear] = useState(false);
+
   const search = async (text) => {
     if (text === "")
       return setState((prevState) => ({
@@ -77,9 +79,15 @@ function App() {
       results: [],
       message: messages.tryAgain,
     }));
+    setClear(true);
   };
 
   useEffect(() => {
+    if (clear)
+      return setState((prevState) => ({
+        ...prevState,
+        message: messages.tryAgain,
+      }));
     if (state.message === messages.initial) return;
     if (loading)
       return setState((prevState) => ({
@@ -91,8 +99,9 @@ function App() {
         ...prevState,
         message: messages.noResults,
       }));
+    setClear(false);
     // eslint-disable-line no-console
-  }, [loading, state.message, state.results.length]);
+  }, [clear, loading, state.message, state.results.length]);
 
   return (
     <ThemeProvider theme={DefaultTheme}>
