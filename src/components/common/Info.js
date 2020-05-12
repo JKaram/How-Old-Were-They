@@ -5,6 +5,7 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   padding: 2px 0;
 
   background-color: rgb(56, 58, 89);
@@ -31,22 +32,19 @@ export function Info({ name, age, deathday, isMovieList }) {
     <Footer>
       <Information className="name">{name}</Information>
       <Information>
-        {deathday ?
-          (<>
+        {deathday ? (
+          <>
             {age} years old (Deceased)
-          <span role="img" aria-label="Rose" className="rose">
+            <span role="img" aria-label="Rose" className="rose">
               🌹
-          </span>
-          </>)
-          : age ?
-            `${age} years old` : !isMovieList ? "Age Not Provided" : null
-        }
+            </span>
+          </>
+        ) : age ? (
+          `${age} years old`
+        ) : !isMovieList ? (
+          "Age Not Provided"
+        ) : null}
       </Information>
     </Footer>
   );
 }
-
-
-
-
-
